@@ -1,0 +1,21 @@
+#task 5 pseudo code
+
+"human_pathways" is "pathways" list from KEGG API
+create list "repair_pathways" and "repair_genes"
+split human_pathways when "\n" is present
+
+separate "entry" and "description"
+if "repair" is in the description, add to "repair_pathways"
+
+"pathway_file" is the information of each repair_pathway retrieved from KEGG
+
+make "section" as the classname by splitting each line on the 12th character
+
+if the classname is "GENE"	
+
+	divide the gene information into "gene_identifier" and "gene_description" by splitting when ";" is present
+	divide "gene_identifier" into "gene_id" and "gene_symbol" by separating when spaced apart
+	if the gene_symbol isn't already in repair_genes, add it
+
+print the size of lists "repair pathways" and "repair_genes"
+print list "repair_genes"
